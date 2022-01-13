@@ -3,7 +3,7 @@ from colorama import Fore, Back
 COLORATION = Fore.YELLOW + Back.BLUE
 COLOR_RESET = Fore.RESET + Back.RESET
 
-
+#Header Page of Test Paper
 TITLE = COLORATION + "Class Test".upper().center(80)
 HEAD = "Psychology mcq questions".upper().center(80) + COLOR_RESET
 
