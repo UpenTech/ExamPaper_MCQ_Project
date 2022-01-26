@@ -2,7 +2,7 @@
 ----
     The name of this repository itself is self-explanatory for what the project is about, yes, it's a mcq-questions generator. Well, the program is quite simple and it doesn't involve any calculations. From a programmer's perspective, it's just playing with **I/O**.
 
-    Nevertheless, let me give you an introduction about what's going on in this program. So, we basically are just reading a data file, here it's `data.txt`, and storing the name of the city and its captital to a dictionary, mapped accordingly. We then create a bunch of variables inside a function for generating and storing our answers to the question and also making the options random and unique. Then, all the questions and options are appended to a file - `MCQ-Questions.txt`, with each entry to the loop and answers are stored in a seperate file - `Answers.txt`.
+    Nevertheless, let me give you an introduction about what's going on in this program. So, we basically are just reading a data file, here it's `data.txt`, and storing the name of the city and its captital to a dictionary, mapped accordingly. We then create a bunch of variables inside a function for generating and storing our answers to the question and also making the options random and unique. Then, all the questions and options are appended to a file - `MCQ-Questions.txt`, with each entry to the loop and answers are stored in a seperate file - `Answers.txt`. The files are created if it's not already there.
 
     > This code can be useful for teachers looking for randomizing a MCQ class test.
 
