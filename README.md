@@ -14,6 +14,13 @@ Then, all the questions and options are appended to a file - `MCQ-Questions.txt`
 with each entry to the loop and answers are stored in a seperate file - `Answers.txt`.
 The files are created if it's not already there.
 
+# Installation 
+---
+
+Clone this repository or download the zip file.
+And simply, run the codeFile.py. It then creates two new files as mentioned above.
+You'll know which one is which.
+
 > This code can be useful for teachers looking for randomizing a MCQ class test.
 
 > Yup, I do share your view regarding this being a naive approach for this and I should've worked with less variables,
