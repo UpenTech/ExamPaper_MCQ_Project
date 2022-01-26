@@ -3,6 +3,25 @@ import random
 ans_ = []
 all_options_ = []
 
+def header_(file_) -> None:
+    """Creates the header for our ques paper
+
+    :param file_: file
+    :type file_: file
+    """
+
+    #Header Page of Test Paper
+    TITLE ="Class Test".upper().center(80)
+    HEAD = "Geography mcq questions".upper().center(80)
+
+    MARKS_F = "Full Marks: 100".rjust(120)
+    MARKS_P = "Pass Marks: 35".rjust(120)
+
+    print(TITLE, file=file_)
+    print(HEAD, file=file_)
+    print(MARKS_F,file=file_)
+    print(MARKS_P,  file=file_)
+
 def createDictionary(ques_: dict) -> None:
     """Reads from a data file and 
     creates a dictionary containing questions along with its
@@ -35,6 +54,7 @@ def generateQuestion(ques_: dict) -> list:
     temp = all_options_.copy()
 
     with open("MCQ_Questions.txt","a+") as prob_:
+        header_(prob_)
 
         for no in range(1,51):
 
