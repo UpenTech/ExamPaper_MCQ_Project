@@ -49,8 +49,8 @@ def generateQuestion(ques_: dict) -> list:
     :type ques_: dict
     :return: None
     """
-    options_ = []
-    global all_options_
+    options_ = []                                   #Options Container
+    global all_options_                             #GodSheet - suffled answersheet
     temp = all_options_.copy()
 
     with open("MCQ_Questions.txt","a+") as prob_:
@@ -61,7 +61,7 @@ def generateQuestion(ques_: dict) -> list:
             all_options_ = temp.copy()
             to_go = random.choice(list(ques_))
             global ans_
-            ans_.append(ques_[to_go])
+            ans_.append(ques_[to_go])               #I want my answers
             options_.append(ques_[to_go])
 
             print(f"{no}. What is the capital of the state {to_go}?", file=prob_)
