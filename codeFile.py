@@ -1,5 +1,7 @@
-from typing import Iterable
+import random
 
+ans_ = []
+all_options_ = []
 
 def createDictionary(ques_: dict) -> None:
     """Reads from a data file and 
@@ -8,7 +10,7 @@ def createDictionary(ques_: dict) -> None:
 
     :param ques_: empty dictionary
     :type ques_: dict
-    :return: dictionary
+    :return: None
     """
     with open("data.txt") as sou:
         retrive = sou.readline()
@@ -20,8 +22,53 @@ def createDictionary(ques_: dict) -> None:
             ques_[state] = capital
             retrive = sou.readline()
 
-ques_ = {}
 
-createDictionary(ques_)
-for a in ques_.items():
-    print(a)
+def generateQuestion(ques_: dict) -> list:
+    """ Generates 50 MCQ questions based
+    on geography from data.txt file
+
+    :type ques_: dict
+    :return: None
+    """
+    options_ = []
+    global all_options_
+    temp = all_options_.copy()
+
+    with open("MCQ_Questions.txt","a+") as prob_:
+
+        for no in range(1,51):
+
+            all_options_ = temp.copy()
+            to_go = random.choice(list(ques_))
+            global ans_
+            ans_.append(ques_[to_go])
+            options_.append(ques_[to_go])
+
+            print(f"{no}. What is the capital of the state {to_go}?", file=prob_)
+
+            for _ in range(3):
+                var = random.choice(all_options_)
+                options_.append(var)
+                all_options_.remove(var)
+
+            random.shuffle(options_)
+
+            for opt in options_:
+                print(opt, file=prob_)
+
+            options_.clear()
+            del ques_[to_go]
+            print("-" * 55, file=prob_)
+
+
+
+ques_dict =  {}
+
+createDictionary(ques_dict)
+all_options_ = list(ques_dict.values())
+generateQuestion(ques_dict)
+
+with open("Answers.txt", "a+") as soln_:
+    print("Solution of MCQ. (numerical order)", file=soln_)
+    for _ in ans_:
+        print(_, file= soln_)
