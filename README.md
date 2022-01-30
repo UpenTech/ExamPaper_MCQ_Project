@@ -3,7 +3,7 @@
 
 The name of this repository itself is self-explanatory for what the project is about, yes, it's a mcq-questions generator.
 Well, the program is quite simple and it doesn't involve any calculations.
-From a programmer's perspective, it's just playing with **I/O**.
+From a programmer's perspective, it's just some play with **I/O**.
 
 Nevertheless, let me give you an introduction about what's going on in this program.
 So, we basically are just reading a data file, here it's `data.txt`,
